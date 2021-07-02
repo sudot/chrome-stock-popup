@@ -6,20 +6,31 @@ function openWindow(e) {
 }
 
 // query
-function httpRequest(callback) {
+function httpRequest(callback, url) {
   var stocks = loadStocks()
   if (stocks.length === 0) {
     stocks.push('SH000001')
   }
   // https://stock.xueqiu.com/v5/stock/batch/quote.json?symbol=SH000001,SH000002&extend=detail&is_delay_hk=false
   // 响应样例数据查看 demo.json
-  var url = `https://stock.xueqiu.com/v5/stock/batch/quote.json?symbol=${stocks.join(',')}&extend=detail&is_delay_hk=false`
+  url = url || `https://stock.xueqiu.com/v5/stock/batch/quote.json?symbol=${stocks.join(',')}&extend=detail&is_delay_hk=false`
 
   var xhr = new XMLHttpRequest()
   xhr.open("GET", url, true)
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4) {
-      callback(JSON.parse(xhr.responseText).data || { items: [] })
+  if (callback) {
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4) {
+        try {
+          var json = JSON.parse(xhr.responseText)
+          if (json.error_code == '400016') {
+            httpRequest(callback, 'https://xueqiu.com')
+          } else {
+            callback(json.data || { items: [] })
+          }
+        } catch (e) {
+          httpRequest(callback)
+        }
+      }
     }
   }
   xhr.send()
