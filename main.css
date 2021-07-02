@@ -1,0 +1,31 @@
+body {
+  width: 500px;
+  padding: 10px 0px;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+table td {
+  padding: 5px 10px;
+}
+
+tbody tr:hover {
+  background: #f5fafe;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.options {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}

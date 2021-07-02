@@ -1,0 +1,115 @@
+{
+  "data": {
+    "items": [
+      {
+        "market": {
+          "status_id": 7,
+          "region": "CN",
+          "status": "已收盘",
+          "time_zone": "Asia/Shanghai",
+          "time_zone_desc": null,
+          "delay_tag": 0
+        },
+        "quote": {
+          "symbol": "SH000001",
+          "code": "000001",
+          "exchange": "SH",
+          "name": "上证指数",
+          "type": 12,
+          "sub_type": null,
+          "status": 1,
+          "current": 3518.76,
+          "currency": "CNY",
+          "percent": -1.95,
+          "chg": -70.02,
+          "timestamp": 1625209200000,
+          "time": 1625209200000,
+          "lot_size": 100,
+          "tick_size": 0.01,
+          "open": 3569.8919,
+          "last_close": 3588.7816,
+          "high": 3569.8919,
+          "low": 3514.3386,
+          "avg_price": 3518.76,
+          "volume": 29194554800,
+          "amount": 4.52263194296E11,
+          "turnover_rate": 0.76,
+          "amplitude": 1.55,
+          "market_capital": 4.816037790538884E13,
+          "float_market_capital": 2.523988507636488E13,
+          "total_shares": 13686747009,
+          "float_shares": 3819595616852,
+          "issue_date": 661536000000,
+          "lock_set": 0,
+          "current_year_percent": 1.32,
+          "high52w": 3731.69,
+          "low52w": 3021.67,
+          "rise_count": 510,
+          "flat_count": 83,
+          "fall_count": 1080,
+          "volume_ratio": 0.95
+        },
+        "others": {
+          "cyb_switch": true
+        },
+        "tags": []
+      },
+      {
+        "market": {
+          "status_id": 7,
+          "region": "CN",
+          "status": "已收盘",
+          "time_zone": "Asia/Shanghai",
+          "time_zone_desc": null,
+          "delay_tag": 0
+        },
+        "quote": {
+          "symbol": "SH000002",
+          "code": "000002",
+          "exchange": "SH",
+          "name": "Ａ股指数",
+          "type": 12,
+          "sub_type": "",
+          "status": 1,
+          "current": 3688.2,
+          "currency": "CNY",
+          "percent": -1.95,
+          "chg": -73.48,
+          "timestamp": 1625209200000,
+          "time": 1625209200000,
+          "lot_size": 100,
+          "tick_size": 0.01,
+          "open": 3741.8512,
+          "last_close": 3761.6811,
+          "high": 3741.8512,
+          "low": 3683.563,
+          "avg_price": 3688.2,
+          "volume": 29164203000,
+          "amount": 4.5196414183E11,
+          "turnover_rate": 0.78,
+          "amplitude": 1.55,
+          "market_capital": null,
+          "float_market_capital": null,
+          "total_shares": null,
+          "float_shares": 3733184786282,
+          "issue_date": 661536000000,
+          "lock_set": 0,
+          "current_year_percent": 1.31,
+          "high52w": 3911.9239,
+          "low52w": 3167.2702,
+          "rise_count": null,
+          "flat_count": null,
+          "fall_count": null,
+          "volume_ratio": 0.95
+        },
+        "others": {
+          "cyb_switch": true
+        },
+        "tags": []
+      }
+    ],
+    "items_size": 2
+  },
+  "error_code": 0,
+  "error_description": ""
+}
