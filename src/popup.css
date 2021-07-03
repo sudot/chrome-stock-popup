@@ -1,6 +1,5 @@
 body {
-  width: 500px;
-  padding: 10px 0px;
+  width: 650px;
 }
 
 table {
@@ -10,7 +9,7 @@ table {
 }
 
 table td {
-  padding: 5px 10px;
+  padding: 5px;
 }
 
 tbody tr:hover {
@@ -22,10 +21,10 @@ tbody tr:hover {
 }
 
 .options {
-  text-align: center;
-  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
 }
 
-.hidden {
-  display: none;
+.input {
+  width: 100%;
 }
