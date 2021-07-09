@@ -21,19 +21,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="stock in stocks">
-          <td>{{regionMap[stock.market.region]}}</td>
-          <td><a href="javascript:void(0)" @click="handleOpenWindow(stock.quote.symbol)">{{stock.quote.symbol}}</a>
-          </td>
-          <td>{{stock.quote.name}}</td>
-          <td class="text-right">{{stock.quote.current}}</td>
-          <td class="text-right">{{stock.quote.chg}}({{stock.quote.percent}}%)</td>
-          <td class="options">
-            <input type="button" value="⬆️" @click="handleUp(stock.quote.symbol)"></input>
-            <input type="button" value="⬇️" @click="handleDown(stock.quote.symbol)"></input>
-            <input type="button" value="移除" @click="handleRemove(stock.quote.symbol)"></input>
-          </td>
-        </tr>
+        <template v-for="stock in stocks">
+          <tr>
+            <td>{{regionMap[stock.market.region]}}</td>
+            <td><a href="javascript:void(0)" @click="handleOpenWindow(stock.quote.symbol)">{{stock.quote.symbol}}</a>
+            </td>
+            <td>{{stock.quote.name}}</td>
+            <!-- 小于 0 红色，大于 0 绿色，等于 0 黑色 -->
+            <td class="text-right" :class="{ 'text-red': stock.quote.chg > 0, 'text-green': stock.quote.chg < 0 }">{{stock.quote.current}}</td>
+            <td class="text-right" :class="{ 'text-red': stock.quote.chg > 0, 'text-green': stock.quote.chg < 0 }">{{stock.quote.chg}}({{stock.quote.percent}}%)</td>
+            <td class="options">
+              <input type="button" value="⬆" @click="handleUp(stock.quote.symbol)"></input>
+              <input type="button" value="⬇" @click="handleDown(stock.quote.symbol)"></input>
+              <input type="button" value="移除" @click="handleRemove(stock.quote.symbol)"></input>
+            </td>
+          </tr>
+        </template>
         <tr>
           <td colspan="5">
             <input class="input" v-model="value" @native.entry="handleSave" placeholder="输入完整股票代码。如：SH000001"></input>

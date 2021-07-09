@@ -28,3 +28,11 @@ tbody tr:hover {
 .input {
   width: 100%;
 }
+
+.text-red {
+  color: red;
+}
+
+.text-green {
+  color: green;
+}
