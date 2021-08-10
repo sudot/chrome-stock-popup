@@ -28,6 +28,8 @@ Vue.createApp({
   data() {
     return {
       value: '',
+      calcValues: [],
+      changePercent: '',
       stocks: [],
       regionMap: {
         'CN': 'A股',
@@ -42,7 +44,7 @@ Vue.createApp({
       addStock('SH000001')
     }
     this.getRemoteStocks()
-    setTimeout(this.getRemoteStocks, 3000)
+    setInterval(this.getRemoteStocks, 3000)
   },
   methods: {
     // query
@@ -106,5 +108,14 @@ Vue.createApp({
       stocks.splice(index, 2, stocks[index + 1], stock)
       storageStocks(stocks.map(v => v.quote.symbol))
     },
+    handleChangePercent() {
+      if (this.calcValues.length != 2) { return }
+      let a = this.calcValues[0]
+      let b = this.calcValues[1]
+      // 涨：100 -> 120 => (120 - 100) / 100 => 120 / 100 - 1
+      // 跌：120 -> 100 => (120 - 100) / 120 => 1 - 100 / 120
+      let changePercent = a < b ? b / a - 1 : 1 - b / a
+      this.changePercent = (changePercent * 100).toFixed(3)
+    }
   }
 }).mount('#app')

@@ -39,10 +39,20 @@
         </template>
         <tr>
           <td colspan="5">
-            <input class="input" v-model="value" @native.entry="handleSave" placeholder="输入完整股票代码。如：SH000001"></input>
+            <input class="input" v-model="value" @keyup.enter="handleSave" placeholder="输入完整股票代码。如：SH000001"></input>
           </td>
           <td class="options">
             <input type="button" value="添加" @click="handleSave" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="5" style="text-align: left;">
+            <input v-model="calcValues[0]" placeholder="原数值"></input>
+            <input v-model="calcValues[1]" placeholder="现数值"></input>
+            <span>涨跌幅：{{changePercent}}%</span>
+          </td>
+          <td class="options">
+            <input type="button" value="计算涨跌幅" @click="handleChangePercent" />
           </td>
         </tr>
       </tbody>
